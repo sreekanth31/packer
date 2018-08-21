@@ -6,7 +6,6 @@ done
 
 #!/bin/bash
 #update yum packages
-sudo su
 sudo yum update -y
 sudo yum install wget unzip -y
 #download java
@@ -19,10 +18,10 @@ chown -R root.root *
 cd /bin
 ln -s /opt/jdk/bin/java java
 cd /opt/
-wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.32/bin/apache-tomcat-8.5.32-windows-x64.zip
-unzip apache-tomcat-8.5.32-windows-x64.zip
-mv apache-tomcat-8.5.32 tomcat
+wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33.tar.gz
+tar -zxvf apache-tomcat-8.5.33.tar.gz
+mv apache-tomcat-8.5.33 tomcat
 chmod 755 /opt/tomcat/bin/*.sh
-cd /opt/tomcat/bin/startup.sh
+sh /opt/tomcat/bin/startup.sh
 
 
